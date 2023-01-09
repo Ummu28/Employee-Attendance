@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>WORKXY - Attendance</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-xxl position-relative bg-white d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-light navbar-light">
+                <a href="index.html" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>WORKXY</h3>
+                </a>
+                <div class="d-flex align-items-center ms-4 mb-4">
+                    <div class="position-relative">
+                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-0">Adam</h6>
+                        <span>User</span>
+                    </div>
+                </div>
+                <div class="navbar-nav w-100">
+                    <a href="/dashboard" class="nav-item nav-link "><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="/attendance" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Attendance</a>
+                    <a href="/leave" class="nav-item nav-link active"><i class="fa fa-keyboard me-2"></i>Leave</a>
+                    <div class="nav-item dropdown">
+                        <a href="/report" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Report</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="/attReport" class="dropdown-item">Employee Attendance Report</a> 
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="/other" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-plus me-2"></i>Others</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="/button" class="dropdown-item">Buttons</a>
+                            <a href="/typography" class="dropdown-item">Typography</a>
+                            <a href="element.ejs" class="dropdown-item">Other Elements</a>
+                            <a href="/signup" class="dropdown-item">Sign Up</a>
+                            <a href="/404" class="dropdown-item">404 Error</a>
+                            <a href="/blank" class="dropdown-item">Blank Page</a>
+                            <a href="/table" class="dropdown-item">Tables</a>
+                            <a href="/chart" class="dropdown-item">Chart</a>
+                        </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
+                <a href="/dashboard" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+             <!--  <form class="d-none d-md-flex ms-4">
+                    <input class="form-control border-0" type="search" placeholder="Search">
+                </form> 
+            -->
+                <div class="navbar-nav align-items-center ms-auto">
+                    <div>
+                        <a href="/clock" class="nav-item nav-link" >
+                            <i class="fa fa-clock me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Web Clocking Capture</span>    
+                        </a>
+                        
+                    </div>
+                    <!--
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-envelope me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Message</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="/img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="/img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="/img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">See all message</a>
+                        </div>
+                    </div> 
+                    -->
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-bell me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Notification</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Profile updated</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">New user added</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Password changed</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">See all notifications</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <img class="rounded-circle me-lg-2" src="/img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex">Adam</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                           
+                            <a href="/logout" class="dropdown-item">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+
+            <!-- 404 Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row vh-100 bg-light rounded align-items-center justify-content-center mx-0">
+                    <div class="col-sm-6 col-xl-6">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-calendar fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Leave Entitled</p>
+                                <h6 class="mb-0">20 Days</h6>
+                            </div>
+                        </div>
+                        <div class="container-fluid pt-4 px-4"> </div>
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-check-square fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Leave Balance</p>
+                                <h6 class="mb-0">14 Days</h6>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+
+                    <!--POPUP LEAVE REQUEST-->                  
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <style>
+                    body {font-family: Arial, Helvetica, sans-serif;}
+
+                    /* Full-width input fields */
+                    input[type=text], input[type=password] {
+                    width: 100%;
+                    padding: 12px 20px;
+                    margin: 8px 0;
+                    display: inline-block;
+                    border: 1px solid #ccc;
+                    box-sizing: border-box;
+                    }
+
+                    /* Set a style for all buttons */
+                    button {
+                    background-color: #04AA6D;
+                    color: white;
+                    padding: 14px 20px;
+                    margin: 8px 0;
+                    border: none;
+                    cursor: pointer;
+                    width: 100%;
+                    }
+
+                    button:hover {
+                    opacity: 0.8;
+                    }
+
+                    /* Extra styles for the cancel button */
+                    .cancelbtn {
+                    width: auto;
+                    padding: 10px 18px;
+                    background-color: #f44336;
+                    }
+
+                    /* Center the image and position the close button */
+                    .imgcontainer {
+                    text-align: center;
+                    margin: 24px 0 12px 0;
+                    position: relative;
+                    }
+
+                    img.avatar {
+                    width: 40%;
+                    border-radius: 50%;
+                    }
+
+                    .container {
+                    padding: 16px;
+                    }
+
+                    span.psw {
+                    float: right;
+                    padding-top: 16px;
+                    }
+
+                    /* The Modal (background) */
+                    .modal {
+                    display: none; /* Hidden by default */
+                    position: fixed; /* Stay in place */
+                    z-index: 1; /* Sit on top */
+                    left: 0;
+                    top: 0;
+                    width: 100%; /* Full width */
+                    height: 100%; /* Full height */
+                    overflow: auto; /* Enable scroll if needed */
+                    background-color: rgb(0,0,0); /* Fallback color */
+                    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+                    padding-top: 60px;
+                    }
+
+                    /* Modal Content/Box */
+                    .modal-content {
+                    background-color: #fefefe;
+                    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+                    border: 1px solid #888;
+                    width: 60%; /* Could be more or less, depending on screen size */
+                    }
+
+                    /* The Close Button (x) */
+                    .close {
+                    position: absolute;
+                    right: 25px;
+                    top: 0;
+                    color: #000;
+                    font-size: 35px;
+                    font-weight: bold;
+                    }
+
+                    .close:hover,
+                    .close:focus {
+                    color: red;
+                    cursor: pointer;
+                    }
+
+                    /* Add Zoom Animation */
+                    .animate {
+                    -webkit-animation: animatezoom 0.6s;
+                    animation: animatezoom 0.6s
+                    }
+
+                    @-webkit-keyframes animatezoom {
+                    from {-webkit-transform: scale(0)} 
+                    to {-webkit-transform: scale(1)}
+                    }
+                    
+                    @keyframes animatezoom {
+                    from {transform: scale(0)} 
+                    to {transform: scale(1)}
+                    }
+
+                    /* Change styles for span and cancel button on extra small screens */
+                    @media screen and (max-width: 300px) {
+                    span.psw {
+                        display: block;
+                        float: none;
+                    }
+                    .cancelbtn {
+                        width: 100%;
+                    }
+                    }
+                    </style>
+                    </head>
+                    <body>
+
+
+                    <button class="btn btn-primary rounded-pill m-2" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Request Leave</button>
+
+                    <div id="id01" class="modal">
+                    
+                    <form class="modal-content animate" action="/action_page.php" method="post">
+                        <div class="imgcontainer">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        
+                        </div>
+                        <h6 class="col-md-3 text-center p-6">Leave Request Form</h6>
+                        <div class="container">
+                            <div class="form-floating mb-3">
+                                <select class="form-select" id="leaveType"
+                                    aria-label="Floating label select example" required>
+                                    <option selected>Select Leave Type </option>
+                                    <option value="1">Annual Leave</option>
+                                    <option value="2">Medical Leave</option>
+                                    <option value="3">Emergency Leave</option>
+                                    <option value="3">Covid Positive Leave</option>
+                                    <option value="3">Maternity Leave</option>
+                                </select>
+                                <label for="floatingSelect">Leave Type</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control" id="leaveDays"
+                                    placeholder="Insert total days" required>
+                                <label for="floatingInput">Total Days</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="date" class="form-control" id="beginDate" name="beginDate"
+                                    placeholder="Insert begin date" required>
+                                <label for="beginDate">Begin Date</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="date" class="form-control" id="endDate" name="endDate"
+                                    placeholder="Insert begin date" required>
+                                <label for="endDate">End Date</label>
+                            </div>
+                            <!--DAYS CALCULATION-->
+                            <script type="text/javascript">
+                                // JavaScript program to illustrate
+                                // calculation of no. of days between two date
+                                
+                                // To set two dates to two variables
+                                var date1 = new Date(beginDate);
+                                var date2 = new Date(endDate);
+                                
+                                // To calculate the time difference of two dates
+                                var Difference_In_Time = date2.getTime() - date1.getTime() ;
+                                
+                                // To calculate the no. of days between two dates
+                                var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+                                
+                                //To display the final no. of days (result)
+                                console.log("Total number of days between dates <br>"
+                                        + date1 + "<br> and <br>"
+                                        + date2 + " is: <br> "
+                                        + Difference_In_Days);
+                                
+                            </script>
+                            <div class="form-floating mb-3 ">
+                                <input type="text" class="form-control" id="totDay"
+                                    placeholder="totDay" required>
+                                <label for="totDay">Total Day </h1></label>
+                            </div>
+                           
+                            <div class="form-floating mb-3 ">
+                                <input type="text" class="form-control" id="reason"
+                                    placeholder="Reason" required>
+                                <label for="reason">Reason</label>
+                            </div>
+                        
+                            
+                        <button class="btn btn-primary rounded-pill m-2" type="submit">Apply Leave</button>
+                        <label>
+                            
+                        </label>
+                        </div>
+
+                        <div class="container" style="background-color:#f1f1f1">
+                        <button  type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                        
+                        </div>
+                    </form>
+                    </div>
+
+                    <script>
+                    // Get the modal
+                    var modal = document.getElementById('id01');
+
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                    </script>
+
+                    </body>
+                    </html>
+                    <div class="col-sm-12 col-xl-9">
+                        <div class="bg-light rounded h-100 p-4">
+                            <h6 class="mb-4">Requested Leave</h6>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Leave Type</th>
+                                        <th scope="col">Begin Date</th>
+                                        <th scope="col">End Date</th>
+                                        <th scope="col">Total Days</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Annual Leave</td>
+                                        <td>09082022</td>
+                                        <td>12082022</td>
+                                        <td>4 days</td>
+                                        <td>Approved</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Emergency Leave</td>
+                                        <td>13082022</td>
+                                        <td>14082022</td>
+                                        <td>2 days</td>
+                                        <td>Rejected</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+            <!-- 404 End -->
+         
+
+
+             <!-- Footer Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-light rounded-top p-4">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 text-center text-sm-start">
+                            &copy; <a href="#">WORKXY</a>, All Right Reserved. 
+                        </div>
+                        <div class="col-12 col-sm-6 text-center text-sm-end">
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                            
+                        </br>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
