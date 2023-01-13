@@ -148,7 +148,7 @@
                             <a href="#" class="dropdown-item text-center">See all message</a>
                         </div>
                     </div> 
-                    -->
+                    
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-bell me-lg-2"></i>
@@ -172,7 +172,7 @@
                             <hr class="dropdown-divider">
                             <a href="#" class="dropdown-item text-center">See all notifications</a>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="/img/user.jpg" alt="" style="width: 40px; height: 40px;">
@@ -364,11 +364,7 @@
                                 </select>
                                 <label for="floatingSelect">Leave Type</label>
                             </div>
-                            <div class="form-floating mb-3">
-                                <input type="number" class="form-control" id="leaveDays"
-                                    placeholder="Insert total days" required>
-                                <label for="floatingInput">Total Days</label>
-                            </div>
+                            
                             <div class="form-floating mb-3">
                                 <input type="date" class="form-control" id="beginDate" name="beginDate"
                                     placeholder="Insert begin date" required>
@@ -379,32 +375,11 @@
                                     placeholder="Insert begin date" required>
                                 <label for="endDate">End Date</label>
                             </div>
-                            <!--DAYS CALCULATION-->
-                            <script type="text/javascript">
-                                // JavaScript program to illustrate
-                                // calculation of no. of days between two date
-                                
-                                // To set two dates to two variables
-                                var date1 = new Date(beginDate);
-                                var date2 = new Date(endDate);
-                                
-                                // To calculate the time difference of two dates
-                                var Difference_In_Time = date2.getTime() - date1.getTime() ;
-                                
-                                // To calculate the no. of days between two dates
-                                var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
-                                
-                                //To display the final no. of days (result)
-                                console.log("Total number of days between dates <br>"
-                                        + date1 + "<br> and <br>"
-                                        + date2 + " is: <br> "
-                                        + Difference_In_Days);
-                                
-                            </script>
+                           
                             <div class="form-floating mb-3 ">
                                 <input type="text" class="form-control" id="totDay"
                                     placeholder="totDay" required>
-                                <label for="totDay">Total Day </h1></label>
+                                <label for="totDay">Total Day </h1></label> 
                             </div>
                            
                             <div class="form-floating mb-3 ">
@@ -412,6 +387,12 @@
                                     placeholder="Reason" required>
                                 <label for="reason">Reason</label>
                             </div>
+                            <div class="form-floating mb-3 ">
+                                <input type="file" class="form-control" id="doc"
+                                    placeholder="Document" required>
+                                <label for="reason">Attached Document</label>
+                            </div>
+
                         
                             
                         <button class="btn btn-primary rounded-pill m-2" type="submit">Apply Leave</button>

@@ -45,7 +45,7 @@
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
-                <a href="/dashboard" class="navbar-brand mx-4 mb-3">
+                <a href="index.html" class="navbar-brand mx-4 mb-3">
                     <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>WORKXY</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
@@ -54,20 +54,16 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Adam </h6>
-                        <span>User</span>
+                        <h6 class="mb-0">Jeff</h6>
+                        <span>Admin</span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="/dashboard" class="nav-item nav-link "><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="/attendance" class="nav-item nav-link "><i class="fa fa-th me-2"></i>Attendance</a>
-                    <a href="/leave" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Leave</a>
-                    <div class="nav-item dropdown">
-                        <a href="/report" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Report</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="/attReport" class="dropdown-item">Employee Attendance Report</a> 
-                        </div>
-                    </div>
+                    <a href="/adminIndex" class="nav-item nav-link "><i class="fa fa-tachometer-alt me-2"></i>ADMIN Dashboard</a>
+                    <a href="/employee" class="nav-item nav-link active"><i class="fa fa-user me-2"></i>Employee</a>
+                 <!--  <a href="/attendance" class="nav-item nav-link "><i class="fa fa-th me-2"></i>Attendance</a>--> 
+                    <a href="/adminLeave" class="nav-item nav-link "><i class="fa fa-keyboard me-2"></i>Leave Request</a>
+                    
                     <div class="nav-item dropdown">
                         <a href="/other" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-plus me-2"></i>Others</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -80,7 +76,6 @@
                             <a href="/table" class="dropdown-item">Tables</a>
                             <a href="/chart" class="dropdown-item">Chart</a>
                         </div>
-                    </div>
                 </div>
             </nav>
         </div>
@@ -91,7 +86,7 @@
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
-                <a href="/dashboard" class="navbar-brand d-flex d-lg-none me-4">
+                <a href="/adminIndex" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
                 </a>
                 <a href="#" class="sidebar-toggler flex-shrink-0">
@@ -102,46 +97,17 @@
                 </form> 
             -->
                 <div class="navbar-nav align-items-center ms-auto">
-                    <div>
-                        <a href="/clock" class="nav-item nav-link" >
-                            <i class="fa fa-clock me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Web Clocking Capture</span>    
-                        </a>
-                        
-                    </div>
-                   
+                    
+                    
                     
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-bell me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Notification</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Profile updated</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">New user added</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Password changed</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all notifications</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="/img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">Adam</span>
+                            <span class="d-none d-lg-inline-flex">Jeff</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             
+                            <a href="/setting" class="dropdown-item">Setting</a>
                             <a href="/logout" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
@@ -167,10 +133,14 @@
                         <!--<h6 class="col-md-4 text-center p-6">Employee Profile</h6>-->
                      <div class="container">
                             <div>.</div>
-                            <!-- name tak ada ////////////////////////////////////////////////////////-->
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="name" value="<%= data.email %>"
-                                    name="name" placeholder="Insert Name" required>
+                                <input type="text" class="form-control" id="username" value="<%= data.username %>">
+                                     
+                                <label for="floatingInput">User Name</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="fullname" value="<%= data.fullname %>"
+                                    name="fullname" placeholder="Insert Name" required>
                                 <label for="floatingInput">Full Name</label>
                             </div>
                             <div class="form-floating mb-3">
@@ -202,8 +172,17 @@
                                     placeholder="Choose City" required>
                                 <label for="floatingInput">City</label>
                             </div>
-                            <div><button class="btn btn-primary rounded-pill m-2"
-                                type="submit">Update Profile</button></div>
+                            <div><button class="btn btn-success rounded-pill m-2"
+                                type="submit">Update Profile</button> 
+                                <button class="btn btn-warning rounded-pill m-2"
+                                type="submit">Remove employee</button> 
+                                <button type="button" class="btn btn-danger rounded-pill m-2"  
+                                        class="cancelbtn">Cancel</button>
+                                        
+
+                                
+                            </div>
+
 
 
 
